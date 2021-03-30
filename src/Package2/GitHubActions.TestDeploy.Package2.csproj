@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net472;netcoreapp2.1</TargetFrameworks>
+    <RootNamespace>GitHubActions.TestDeploy.Package1</RootNamespace>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\NServiceBus.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+
+  <ItemGroup Label="Private dependencies">
+    <PackageReference Include="Particular.Packaging" Version="1.1.0" PrivateAssets="All" />
+  </ItemGroup>
+
+  <!-- Workaround for https://github.com/dotnet/sdk/issues/1469 -->
+  <PropertyGroup>
+    <DisableLockFileFrameworks>true</DisableLockFileFrameworks>
+  </PropertyGroup>
+  <!-- End Workaround -->
+
+</Project>
