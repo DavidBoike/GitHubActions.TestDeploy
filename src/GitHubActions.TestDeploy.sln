@@ -6,6 +6,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GitHubActions.TestDeploy.Pa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GitHubActions.TestDeploy.Package2", "Package2\GitHubActions.TestDeploy.Package2.csproj", "{2C2F8E11-E993-4475-9F1C-B2AF42894EDD}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Package2Tests", "Package2Tests\Package2Tests.csproj", "{B9E7FEE9-B62F-4309-9157-2221A9D05FAA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Package1Tests", "Package1Tests\Package1Tests.csproj", "{1439DF9F-8965-4B6D-9079-29586D2BC6E9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +24,14 @@ Global
 		{2C2F8E11-E993-4475-9F1C-B2AF42894EDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C2F8E11-E993-4475-9F1C-B2AF42894EDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C2F8E11-E993-4475-9F1C-B2AF42894EDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9E7FEE9-B62F-4309-9157-2221A9D05FAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9E7FEE9-B62F-4309-9157-2221A9D05FAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9E7FEE9-B62F-4309-9157-2221A9D05FAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9E7FEE9-B62F-4309-9157-2221A9D05FAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1439DF9F-8965-4B6D-9079-29586D2BC6E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1439DF9F-8965-4B6D-9079-29586D2BC6E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1439DF9F-8965-4B6D-9079-29586D2BC6E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1439DF9F-8965-4B6D-9079-29586D2BC6E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

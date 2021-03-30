@@ -1,0 +1,8 @@
+namespace GitHubActions.TestDeploy.Package2
+{
+    public class FooBar
+    {
+        public FooBar() { }
+        public void Baz() { }
+    }
+}

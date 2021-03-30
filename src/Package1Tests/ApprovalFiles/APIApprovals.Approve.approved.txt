@@ -1,0 +1,8 @@
+namespace GitHubActions.TestDeploy.Package1
+{
+    public class Foo
+    {
+        public Foo() { }
+        public void Bar() { }
+    }
+}
