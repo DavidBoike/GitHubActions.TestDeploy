@@ -1,7 +1,7 @@
 name: Deploy
 on:
   push:
-    branches:
+    branches: ## Temporary so I don't have to keep tagging
       - main
     tags:
       - '*'
@@ -9,10 +9,35 @@ env:
   DOTNET_NOLOGO: true
 jobs:
   staging:
-    runs-on: ubuntu-20.04
+    runs-on: windows-2019 # Because code signing https://github.com/NuGet/Home/issues/7939
     steps:
-      - name: Hi
-        run: echo 'Hi'
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Setup .NET Core SDK
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 3.1.x
+      - name: Setup NuGet for signing
+        uses: nuget/setup-nuget@v1
+        with:
+          nuget-api-key: ${{ secrets.NuGetAPIKey }}
+          nuget-version: '5.8.1'
+      - name: Build
+        run: dotnet build src/GitHubActions.TestDeploy.sln --configuration Release
+      - name: Get certificate
+        id: cert_file
+        uses: timheuer/base64-to-file@v1.0.4
+        with:
+          fileName: 'certfile.pfx'
+          encodedString: ${{ secrets.SIGNING_CERT }}
+      - name: Sign NuGet Packages
+        run: nuget sign nugets\*.nupkg -CertificatePath ${{ steps.cert_file.outputs.filePath }} -CertificatePassword ${{ secrets.CERT_PWD }} -Timestamper http://timestamp.digicert.com –NonInteractive
+      - name: Generate release notes
+        run: echo TEMP
+      - name: Push to MyGet
+        run: echo TEMP
   production:
     runs-on: ubuntu-20.04
     environment: production
