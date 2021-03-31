@@ -41,6 +41,7 @@ jobs:
   production:
     runs-on: ubuntu-20.04
     environment: production
+    needs: staging
     steps:
       - name: Hi
         run: echo 'Hi'
