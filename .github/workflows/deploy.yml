@@ -1,8 +1,6 @@
 name: Deploy
 on:
   push:
-    branches: ## Temporary so I don't have to keep tagging
-      - main
     tags:
       - '*'
 env:
