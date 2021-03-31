@@ -24,9 +24,9 @@ jobs:
         with:
           nuget-api-key: ${{ secrets.NuGetAPIKey }}
           nuget-version: '5.8.1'
-      - name: Build
-        run: dotnet build src/GitHubActions.TestDeploy.sln --configuration Release
-      ##- name: Get certificate
+      #- name: Build
+      #  run: dotnet build src/GitHubActions.TestDeploy.sln --configuration Release
+      #- name: Get certificate
       #  id: cert_file
       #  uses: timheuer/base64-to-file@v1.0.4
       #  with:
