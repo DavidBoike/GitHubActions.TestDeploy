@@ -32,8 +32,8 @@ jobs:
       #  with:
       #    fileName: 'certfile.pfx'
       #    encodedString: ${{ secrets.SIGNING_CERT }}
-      - name: Sign NuGet Packages
-        run: nuget sign nugets\*.nupkg -CertificatePath ${{ steps.cert_file.outputs.filePath }} -CertificatePassword ${{ secrets.CERT_PWD }} -Timestamper http://timestamp.digicert.com –NonInteractive
+      #- name: Sign NuGet Packages
+      #  run: nuget sign nugets\*.nupkg -CertificatePath ${{ steps.cert_file.outputs.filePath }} -CertificatePassword ${{ secrets.CERT_PWD }} -Timestamper http://timestamp.digicert.com –NonInteractive
       - name: Generate release notes
         run: echo TEMP
       - name: Push to MyGet
