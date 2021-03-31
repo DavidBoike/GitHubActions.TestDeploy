@@ -1,0 +1,18 @@
+name: AdvancedInstaller
+
+on: 
+  workflow_dispatch:
+    inputs:
+    
+env:
+  DOTNET_NOLOGO: true
+  
+jobs:
+  build-and-deploy:
+    runs-on: windows-latest
+    steps:
+      - name: Install advanced installer
+      run: |
+        $version = 17.6
+        choco install advanced-installer --version=$version
+        & "C:\Program Files (x86)\Caphyon\Advanced Installer $version\bin\x86\AdvancedInstaller.com" /register LicenseText          
