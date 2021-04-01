@@ -47,10 +47,3 @@ jobs:
         run: echo TEMP
       - name: Push to MyGet
         run: echo TEMP
-  production:
-    runs-on: ubuntu-20.04
-    environment: production
-    needs: staging
-    steps:
-      - name: Hi
-        run: echo 'Hi'
