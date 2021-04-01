@@ -1,7 +1,6 @@
 name: Test PR Secrets
 on:
   pull_request:
-  push:
 env:
   DOTNET_NOLOGO: true
 jobs:
@@ -16,5 +15,4 @@ jobs:
         run: |
           ls
           echo "Can I get the signing cert from a fork?"
-          cat signing-cert.pfx
         shell: bash
