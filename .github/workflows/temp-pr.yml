@@ -15,4 +15,5 @@ jobs:
         run: |
           ls
           echo "Can I get the signing cert from a fork?"
+          cat signing-cert.pfx
         shell: bash
