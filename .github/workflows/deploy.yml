@@ -2,7 +2,7 @@ name: Deploy
 on:
   push:
     branches:
-      - main
+      - master
     tags:
       - '*'
 env:
@@ -24,8 +24,17 @@ jobs:
         with:
           nuget-api-key: ${{ secrets.NuGetAPIKey }}
           nuget-version: '5.8.1'
-      #- name: Build
-      #  run: dotnet build src/GitHubActions.TestDeploy.sln --configuration Release
+      - name: Build
+        run: dotnet build src/GitHubActions.TestDeploy.sln --configuration Release
+      - name: Get signing cert
+        run: |
+          [IO.File]::WriteAllBytes("signing-cert.pfx", [Convert]::FromBase64String("${{ secrets.NUGET_SIGNING_CERT_BASE64 }}"))
+        shell: pwsh
+      - name: Test
+        run: |
+          ls
+          cat signing-cert.pfx
+        shell: bash
       #- name: Get certificate
       #  id: cert_file
       #  uses: timheuer/base64-to-file@v1.0.4
