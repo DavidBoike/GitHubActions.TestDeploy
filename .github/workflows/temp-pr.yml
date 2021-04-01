@@ -1,4 +1,4 @@
-name: Deploy
+name: Test PR Secrets
 on:
   pull_request:
   push:
